@@ -34,7 +34,7 @@ const Navbar = ({ loading }) => {
 			<div className=" fixed w-screen z-50">
 				<nav
 					className={
-						scrolled
+						scrolled || router.pathname !== "/"
 							? 'bg-white text-black transition duration-150'
 							: 'bg-transparent text-white transition duration-150'
 					}
@@ -58,26 +58,28 @@ const Navbar = ({ loading }) => {
 												Home
 											</a>
 										</Link>
-										{/* <Link
-											className=" py-2 px-2 rounded-md text-sm  "
-											href="/about"
-										>
+										<Link className=" py-2 px-2 rounded-md text-sm  " href="/content">
+											<a
+												className={
+													router.pathname == '/content'
+														? 'font-bold'
+														: ''
+												}
+											>
+												Content
+											</a>
+										</Link>
+										<Link className=" py-2 px-2 rounded-md text-sm  " href="/about">
 											<a
 												className={
 													router.pathname == '/about'
-														? ' border-b-2 border-black text-green-500 inline-block'
+														? 'font-bold'
 														: ''
 												}
 											>
 												About
 											</a>
 										</Link>
-										<Link
-											className=" py-2 px-2 rounded-md text-sm  "
-											href="/blog"
-										>
-											<a>Blog</a>
-										</Link> */}
 									</div>
 								</div>
 								<div className="-mr-2 flex md:hidden">
