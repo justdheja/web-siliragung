@@ -9,8 +9,9 @@ const Footer = () => {
 						<a className="text-2xl dm-serif font-bold">siliragung</a>
 					</Link>
 				</div>
-				<div className=" flex space-x-4 items-center">
+				<div className=" flex space-x-8 items-center">
 					<div className="text-lg max-w-sm text-justify">
+						<h2 className="text-2xl dm-serif font-bold">siliragung</h2>
 						Siliragung adalah sebuah kecamatan di Kabupaten Banyuwangi, Provinsi
 						Jawa Timur, Indonesia. Kecamatan ini dibentuk pada tanggal 8 Juli
 						2004 dari Kecamatan Pesanggaran menurut Perda No. 33 Tahun 2004.
