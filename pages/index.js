@@ -53,7 +53,9 @@ export default function Home() {
 			</div>
 			<div className="h-screen bg-white py-12 px-64">
 				<Fade bottom>
-					<div className="shadow-2xl rounded w-full p-4 bg-white relative overflow-hidden"></div>
+					<div className="shadow-2xl rounded w-full p-4 bg-white relative overflow-hidden">
+						
+					</div>
 				</Fade>
 			</div>
 		</>
