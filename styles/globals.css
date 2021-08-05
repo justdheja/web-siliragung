@@ -35,3 +35,49 @@ a {
 .dm-serif {
   font-family: 'DM Serif Text', serif;
 }
+
+h4 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: 'DM Serif Text', serif;
+}
+
+h5 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-family: 'DM Serif Text', serif;
+}
+
+h6 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+code {
+  font-family: monospace;
+}
+
+
+ul {
+  display: block; 
+  list-style-type: disc; 
+  margin-top: 1em; 
+  margin-bottom: 1em; 
+  margin-left: 0; 
+  margin-right: 0; 
+  padding-left: 40px;
+}
+
+li {
+  display: list-item;
+}
+
+ol {
+  display: block;
+  list-style-type: decimal;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}

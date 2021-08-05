@@ -1,5 +1,6 @@
 import { createClient } from 'contentful';
 import { useEffect, useState } from 'react';
+import { Fade } from 'react-reveal';
 import ContentCard from '../components/ContentCard';
 
 export const getStaticProps = async () => {
@@ -35,7 +36,6 @@ const ContentList = ({ articles, modules, videos, posters }) => {
 	useEffect(() => {
 		setContents(sortedContents);
 		if (searchKey) {
-			console.log(searchKey);
 			const content = sortedContents.filter((content) =>
 				content.fields.title.toUpperCase().includes(searchKey.toUpperCase())
 			);
@@ -65,15 +65,17 @@ const ContentList = ({ articles, modules, videos, posters }) => {
 					</div>
 				</div>
 
-				{contents.length ? (
-					<div className="flex flex-col justify-center lg:grid lg:grid-cols-3 xl:grid-cols-4 gap-4">
-						{contents.map((content, index) => (
-							<ContentCard key={index} content={content} />
-						))}
-					</div>
-				) : (
-					<p className="text-center">Maaf tidak ditemukan</p>
-				)}
+				<Fade bottom>
+					{contents.length ? (
+						<div className="flex flex-col justify-center lg:grid lg:grid-cols-3 xl:grid-cols-4 gap-4">
+							{contents.map((content, index) => (
+								<ContentCard key={index} content={content} />
+							))}
+						</div>
+					) : (
+						<p className="text-center">Maaf tidak ditemukan</p>
+					)}
+				</Fade>
 			</div>
 		</div>
 	);

@@ -1,8 +1,13 @@
 import '../styles/globals.css'
 import Layout from '../components/Layout'
 import Head from 'next/head'
+import Router from 'next/router';
 
 function MyApp({ Component, pageProps }) {
+	Router.events.on("routeChangeStart", () => {
+		return (
+		<div className="h-screen text-center text-2xl">Loading...</div>
+	)})
   return (
 		<Layout>
 			<Head>
