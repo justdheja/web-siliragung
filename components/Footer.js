@@ -1,7 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
+import Image from 'next/image';
+import logo from '../public/logo-logo.png';
 
 const Footer = () => {
-  return (
+	return (
 		<footer className="bg-white h-full p-8 lg:px-28 flex flex-col space-y-10">
 			<div className="flex flex-col lg:flex-row justify-between">
 				<div className="flex justify-center items-center">
@@ -10,8 +13,8 @@ const Footer = () => {
 					</Link>
 				</div>
 				<div className=" flex flex-col lg:flex-row lg:space-x-8 items-center">
-					<div className="text-lg max-w-sm text-justify">
-						<h2 className="text-2xl dm-serif font-bold">siliragung</h2>
+					<div className="text-sm lg:text-lg max-w-sm text-justify">
+						<h2 className="text-2xl dm-serif font-bold hidden lg:block">siliragung</h2>
 						Siliragung adalah sebuah kecamatan di Kabupaten Banyuwangi, Provinsi
 						Jawa Timur, Indonesia. Kecamatan ini dibentuk pada tanggal 8 Juli
 						2004 dari Kecamatan Pesanggaran menurut Perda No. 33 Tahun 2004.
@@ -32,7 +35,9 @@ const Footer = () => {
 			<div>
 				<hr className="border-b-2 border-black" />
 				<div className="flex flex-col lg:flex-row justify-between mt-2">
-					<div>logo logo</div>
+					<div className=" flex w-60">
+						<Image src={logo} />
+					</div>
 					<p className="text-gray-500">
 						&copy; 2021 KKN PPM UGM Siliragung Banyuwangi
 					</p>
@@ -40,6 +45,6 @@ const Footer = () => {
 			</div>
 		</footer>
 	);
-}
+};
 
 export default Footer;

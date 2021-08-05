@@ -19,6 +19,10 @@ body {
   background-attachment: fixed;
 }
 
+.bg-primary {
+  background: #0396A6;
+}
+
 a {
   color: inherit;
   text-decoration: none;
