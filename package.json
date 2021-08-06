@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.1.0",
+    "@contentful/rich-text-types": "^15.1.0",
     "autoprefixer": "^10.3.0",
     "contentful": "^8.4.2",
     "next": "11.0.1",

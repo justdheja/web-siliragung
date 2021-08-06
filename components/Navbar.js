@@ -4,21 +4,21 @@ import { useRouter } from 'next/router';
 
 const Navbar = ({ loading }) => {
 	const [menuMobileOpen, setMenuMobileOpen] = useState(false);
-  const [scrollY, setScrollY] = useState(0)
-  const [scrolled, setScrolled] = useState(false)
+	const [scrollY, setScrollY] = useState(0);
+	const [scrolled, setScrolled] = useState(false);
 	const router = useRouter();
 
 	useEffect(() => {
-    window.addEventListener('scroll', () => {
-      setScrollY(window.scrollY)
-      if (window.scrollY > 40) {
-        setScrolled(true)
-      }
-      if (window.scrollY < 40) {
-        setScrolled(false)
-      }
-    })
-    return window.addEventListener('scroll', () => {})
+		window.addEventListener('scroll', () => {
+			setScrollY(window.scrollY);
+			if (window.scrollY > 40) {
+				setScrolled(true);
+			}
+			if (window.scrollY < 40) {
+				setScrolled(false);
+			}
+		});
+		return window.addEventListener('scroll', () => {});
 	}, [scrollY]);
 
 	const handleMenuMobile = () => {
@@ -34,7 +34,7 @@ const Navbar = ({ loading }) => {
 			<div className=" fixed w-screen z-50">
 				<nav
 					className={
-						scrolled || router.pathname !== "/"
+						scrolled || router.pathname !== '/'
 							? 'bg-white text-black transition duration-150'
 							: 'bg-transparent text-white transition duration-150'
 					}
@@ -47,34 +47,40 @@ const Navbar = ({ loading }) => {
 								</Link>
 								<div className="hidden md:block">
 									<div className="flex items-baseline space-x-6 ">
-										<Link className=" py-2 px-2 rounded-md text-sm  " href="/">
+										<Link className=" py-2 px-2 rounded-md text-sm" href="/">
 											<a
 												className={
 													router.pathname == '/'
-														? 'font-bold'
-														: ''
+														? 'font-bold no-underline'
+														: ' no-underline'
 												}
 											>
 												Home
 											</a>
 										</Link>
-										<Link className=" py-2 px-2 rounded-md text-sm  " href="/content">
+										<Link
+											className=" py-2 px-2 rounded-md text-sm  "
+											href="/contents"
+										>
 											<a
 												className={
-													router.pathname == '/content'
-														? 'font-bold'
-														: ''
+													router.pathname == '/contents'
+														? 'font-bold no-underline'
+														: ' no-underline'
 												}
 											>
 												Content
 											</a>
 										</Link>
-										<Link className=" py-2 px-2 rounded-md text-sm  " href="/about">
+										<Link
+											className=" py-2 px-2 rounded-md text-sm  "
+											href="/about"
+										>
 											<a
 												className={
 													router.pathname == '/about'
-														? 'font-bold'
-														: ''
+														? 'font-bold no-underline'
+														: ' no-underline'
 												}
 											>
 												About
