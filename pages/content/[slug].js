@@ -133,7 +133,7 @@ const ContentDetail = ({ content }) => {
 
 	return (
 		<Fade bottom>
-			<div className="p-8 pt-16 lg:px-72">
+			<div className="p-8 pt-16 lg:px-64">
 				<h1 className="text-4xl mb-6 dm-serif text-center">
 					{content.fields.title}
 				</h1>
@@ -144,7 +144,7 @@ const ContentDetail = ({ content }) => {
 								? content.fields.linkEmbedVideo
 								: content.fields.linkEmbedGoogleDrive
 						}
-						className="mx-auto w-8/12"
+						className="mx-auto w-full xl:w-9/12"
 						height={content.fields.linkEmbedVideo ? 550 : 650}
 						frameBorder="0"
 					/>
