@@ -96,18 +96,7 @@ const ContentDetail = ({ content }) => {
 	const options = {
 		renderNode: {
 			[INLINES.HYPERLINK]: (node) => {
-				if (node.data.uri.includes('player.vimeo.com/video')) {
-					return (
-						<span>
-							<iframe
-								title="Unique Title 001"
-								src={node.data.uri}
-								frameBorder="0"
-								allowFullScreen
-							></iframe>
-						</span>
-					);
-				} else if (node.data.uri.includes('youtube.com/embed')) {
+				if (node.data.uri.includes('youtube.com/embed')) {
 					return (
 						<span>
 							<iframe
@@ -115,14 +104,34 @@ const ContentDetail = ({ content }) => {
 								src={node.data.uri}
 								allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
 								frameBorder="0"
-								className="mx-auto my-4 w-full lg:w-96 h-80"
+								className="mx-auto my-1 mb-4 w-full"
+								height={600}
+								allowFullScreen
+							></iframe>
+						</span>
+					);
+				} else if (node.data.uri.includes('drive.google.com/file')) {
+					return (
+						<span>
+							<iframe
+								title="Unique Title 002"
+								src={node.data.uri}
+								allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+								frameBorder="0"
+								className="mx-auto my-1 mb-4 w-full"
+								height={600}
 								allowFullScreen
 							></iframe>
 						</span>
 					);
 				} else {
 					return (
-						<a href={node.data.uri} target="_blank" className=" px-2 py-1 bg-primary rounded-lg text-white" rel="noreferrer">
+						<a
+							href={node.data.uri}
+							target="_blank"
+							className=" px-2 py-1 bg-primary rounded-lg text-white"
+							rel="noreferrer"
+						>
 							{node.content[0].value}
 						</a>
 					);
