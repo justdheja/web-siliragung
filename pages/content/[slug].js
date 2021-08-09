@@ -4,6 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { INLINES } from '@contentful/rich-text-types';
 import { Fade } from 'react-reveal'
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID,
@@ -143,6 +144,9 @@ const ContentDetail = ({ content }) => {
 	return (
 		<Fade bottom>
 			<div className="p-8 pt-16 lg:px-64">
+				<Head>
+					<title>{content.fields.title} | Siliragung</title>
+				</Head>
 				<h1 className="text-4xl mb-6 dm-serif text-center">
 					{content.fields.title}
 				</h1>

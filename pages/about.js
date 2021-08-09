@@ -1,9 +1,11 @@
+import Head from 'next/head';
 import { Fade } from 'react-reveal';
 
 const About = () => {
   return (
 		<Fade bottom>
 			<div>
+				<Head>About | Siliragung</Head>
 				<div className=" p-8 lg:p-20">
 					<div className="min-h-screen">
 						<h1 className="text-center dm-serif text-4xl mb-4">About</h1>
