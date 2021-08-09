@@ -1,4 +1,5 @@
 import { createClient } from 'contentful';
+import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { Fade } from 'react-reveal';
 import ContentCard from '../components/ContentCard';
@@ -47,6 +48,9 @@ const ContentList = ({ articles, modules, videos, posters }) => {
 
 	return (
 		<div>
+			<Head>
+				<title>Contents | Siliragung</title>
+			</Head>
 			<div className="min-h-screen pt-16 p-8 lg:p-20">
 				<div className="text-center my-2 mb-8">
 					<h2 className="text-4xl m-auto inline-block mb-4 dm-serif">

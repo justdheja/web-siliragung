@@ -94,6 +94,7 @@ const Navbar = ({ loading }) => {
 									<button
 										className="inline-flex items-center justify-center p-2 rounded-md focus:outline-none transition duration-100"
 										onClick={handleMenuMobile}
+										type="button"
 									>
 										{menuMobileOpen ? (
 											<svg
