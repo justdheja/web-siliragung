@@ -2,7 +2,7 @@
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { INLINES } from '@contentful/rich-text-types';
-import { Fade } from 'react-reveal'
+import { Fade } from 'react-reveal';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
@@ -105,7 +105,7 @@ const ContentDetail = ({ content }) => {
 								src={node.data.uri}
 								allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
 								frameBorder="0"
-								className="mx-auto my-1 mb-4 w-full"
+								className="mx-auto my-1 mb-4 w-full sm:max-h-64 lg:max-h-full"
 								height={600}
 								allowFullScreen
 							></iframe>
@@ -119,7 +119,7 @@ const ContentDetail = ({ content }) => {
 								src={node.data.uri}
 								allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
 								frameBorder="0"
-								className="mx-auto my-1 mb-4 w-full"
+								className="mx-auto my-1 mb-4 w-full sm:max-h-64 lg:max-h-full"
 								height={600}
 								allowFullScreen
 							></iframe>
@@ -150,7 +150,8 @@ const ContentDetail = ({ content }) => {
 				<h1 className="text-4xl mb-6 dm-serif text-center">
 					{content.fields.title}
 				</h1>
-				{content.fields.linkEmbedVideo || content.fields.linkEmbedGoogleDrive ? (
+				{content.fields.linkEmbedVideo ||
+				content.fields.linkEmbedGoogleDrive ? (
 					<iframe
 						src={
 							content.fields.linkEmbedVideo
@@ -177,7 +178,7 @@ const ContentDetail = ({ content }) => {
 					</div>
 				)}
 				{content.fields.body && (
-					<div className="w-8/12 m-auto">
+					<div className="lg:w-8/12 m-auto">
 						<img
 							src={content.fields.thumbnail.fields.file.url}
 							alt="thumbnail"
@@ -188,6 +189,21 @@ const ContentDetail = ({ content }) => {
 						</div>
 					</div>
 				)}
+				{content.fields.poster &&
+					content.fields.poster.map((poster, index) => (
+						<div key={index} className="lg:w-8/12 m-auto">
+							<img
+								alt="blog photo"
+								src={'https:' + poster.fields.file.url}
+								width={poster.fields.file.details.image.width}
+								height={poster.fields.file.details.image.height}
+								className="m-auto"
+							/>
+							<p className="text-justify my-2 ">
+								{content.fields.description}
+							</p>
+						</div>
+					))}
 			</div>
 		</Fade>
 	);
