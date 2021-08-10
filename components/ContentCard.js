@@ -18,13 +18,13 @@ const ContentCard = ({ content }) => {
 						<img
 							alt="blog photo"
 							src={'https:' + thumbnail.fields.file.url}
-							className="max-h-48 w-full object-cover"
+							className="max-h-48 w-full object-cover object-top"
 						/>
 					) : (
 						<img
 							alt="blog photo"
 							src="https://images.ctfassets.net/6pcl1zkgu2pg/1U76Mr8dQjeFcknycKwmEC/e20c3d644b34482c543ae4eb0db2ca7c/photo-1499750310107-5fef28a66643"
-							className="max-h-48 w-full object-cover"
+							className="max-h-48 w-full object-cover object-top"
 						/>
 					)}
 					<div className="bg-white w-full p-4">
