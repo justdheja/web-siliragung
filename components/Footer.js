@@ -7,9 +7,18 @@ const Footer = () => {
 	return (
 		<footer className="bg-white h-full p-8 lg:px-28 flex flex-col space-y-10">
 			<div className="flex flex-col lg:flex-row justify-between">
-				<div className="flex justify-center items-center">
+				<div className="flex flex-col justify-center">
 					<Link className="h-full" href="/">
-						<a className="text-2xl dm-serif font-bold">siliragung</a>
+						<a className="text-2xl dm-serif font-bold mb-4">siliragung</a>
+					</Link>
+					<Link className="h-full" href="/">
+						<a className="text-lg ">Home</a>
+					</Link>
+					<Link className="h-full" href="/contents">
+						<a className="text-lg ">Contents</a>
+					</Link>
+					<Link className="h-full" href="/about">
+						<a className="text-lg ">About</a>
 					</Link>
 				</div>
 				<div className=" flex flex-col lg:flex-row lg:space-x-8 items-center">
