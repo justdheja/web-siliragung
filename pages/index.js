@@ -3,18 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Fade } from 'react-reveal';
-import SwiperCore, { Virtual } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import gallery1 from '../public/1.jpg'
-import gallery2 from '../public/2.jpg'
-import gallery3 from '../public/3.jpg'
-import gallery4 from '../public/4.jpg'
-
-// Import Swiper styles
-import 'swiper/swiper.min.css';
-
-// install Virtual module
-SwiperCore.use([Virtual]);
+import ImageGallery from '../components/ImageGallery';
 
 export default function Home() {
 	const [scrollY, setScrollY] = useState(0);
@@ -42,7 +31,9 @@ export default function Home() {
 									transform: `translateY(${scrollY / 3}px)`,
 								}}
 							>
-								<h3 className="text-xl font-semibold">Welcome to</h3>
+								<h3 className="text-xl font-semibold">
+									Welcome to
+								</h3>
 								<h1 className=" text-6xl md:text-9xl dm-serif">Siliragung</h1>
 							</div>
 							<div
@@ -71,34 +62,10 @@ export default function Home() {
 					</Fade>
 				</div>
 			</div>
-			{process.env.ENV != 'production' && (
+			{process.env.ENV !== 'development' && (
 				<div className="min-h-screen bg-white py-12 px-64">
 					<Fade bottom>
-						<div className="shadow-2xl rounded w-full p-4 bg-white relative overflow-hidden ">
-							<Swiper
-								spaceBetween={50}
-								slidesPerView={2}
-								navigation
-								pagination={{ clickable: true }}
-								scrollbar={{ draggable: true }}
-								onSwiper={(swiper) => console.log(swiper)}
-								onSlideChange={() => console.log('slide change')}
-								loop={true}
-							>
-								<SwiperSlide>
-									<Image src={gallery1} alt="" />
-								</SwiperSlide>
-								<SwiperSlide>
-									<Image src={gallery2} alt="" />
-								</SwiperSlide>
-								<SwiperSlide>
-									<Image src={gallery3} alt="" />
-								</SwiperSlide>
-								<SwiperSlide>
-									<Image src={gallery4} alt="" />
-								</SwiperSlide>
-							</Swiper>
-						</div>
+						<ImageGallery />
 					</Fade>
 				</div>
 			)}
