@@ -3,7 +3,6 @@ import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { INLINES } from '@contentful/rich-text-types';
 import { Fade } from 'react-reveal';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 const client = createClient({
