@@ -15,7 +15,7 @@ SwiperCore.use([Virtual]);
 const ImageGallery = () => {
 	return (
 		<div className="shadow-2xl rounded w-full p-4 lg:p-8 bg-white relative overflow-hidden ">
-			<div className="text-4xl dm-serif text-center mb-8">Gallery</div>
+			<div className="text-3xl dm-serif text-center mb-8">Gallery</div>
 			<Swiper
 				spaceBetween={50}
 				slidesPerView={2}
@@ -27,18 +27,20 @@ const ImageGallery = () => {
 				loop={true}
 			>
 				<SwiperSlide>
-					<Image src={gallery1} alt="" />
+					<Image src={gallery1} alt="gallery-image" className=" w-20 cursor-grab" />
 				</SwiperSlide>
 				<SwiperSlide>
-					<Image src={gallery2} alt="" />
+					<Image src={gallery2} alt="gallery-image" className=" w-20 cursor-grab" />
 				</SwiperSlide>
 				<SwiperSlide>
-					<Image src={gallery3} alt="" />
+					<Image src={gallery3} alt="gallery-image" className=" w-20 cursor-grab" />
 				</SwiperSlide>
 				<SwiperSlide>
-					<Image src={gallery4} alt="" />
+					<Image src={gallery4} alt="gallery-image" className=" w-20 cursor-grab" />
 				</SwiperSlide>
 			</Swiper>
+
+			<p className="text-sm mt-4">sumber: Luqman Adi Putra</p>
 		</div>
 	);
 };
