@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Fade } from 'react-reveal';
+import FacilityList from '../components/Facilities';
 import ImageGallery from '../components/ImageGallery';
 
 export default function Home() {
@@ -28,12 +29,10 @@ export default function Home() {
 						<div>
 							<div
 								style={{
-									transform: `translateY(${scrollY / 3}px)`,
+									transform: `translateY(${scrollY / 2.5}px)`,
 								}}
 							>
-								<h3 className="text-xl font-semibold">
-									Welcome to
-								</h3>
+								<h3 className="text-xl font-semibold">Welcome to</h3>
 								<h1 className=" text-6xl md:text-9xl dm-serif">Siliragung</h1>
 							</div>
 							<div
@@ -62,13 +61,13 @@ export default function Home() {
 					</Fade>
 				</div>
 			</div>
-			{process.env.ENV !== 'development' && (
-				<div className="min-h-screen bg-white py-12 px-64">
-					<Fade bottom>
-						<ImageGallery />
-					</Fade>
-				</div>
-			)}
+			<div className="min-h-screen bg-white py-12 lg:px-64 px-4">
+				<Fade bottom>
+					<FacilityList />
+					<hr className=" border-b-2 border-gray-200 my-10" />
+					<ImageGallery />
+				</Fade>
+			</div>
 		</>
 	);
 }
