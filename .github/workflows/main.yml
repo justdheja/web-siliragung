@@ -10,13 +10,16 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14"
-      - name: install and build
-        run: |
-          yarn
-          npm run build
+      - name: Waiting Vercel Preview
+        uses: patrickedqvist/wait-for-vercel-preview@v1.1.1
+        id: siliragung
+        with:
+          token: ${{ secrets.REPO_TOKEN }}
       - name: Run Lighthouse
         run: |
           yarn global add @lhci/cli@0.8.x
-          lhci autorun --upload.target=temporary-public-storage || echo "Lighthouse CI Failed"
+          lhci collect --url=${{ steps.netlify.outputs.url }} --url=${{ steps.netlify.outputs.url }}/contents --url=${{ steps.netlify.outputs.url }}/about
+          echo "\n"
+          lhci upload --target "temporary-public-storage" --githubAppToken "$LHCI_GITHUB_APP_TOKEN" --githubToken "$REPO_TOKEN"
         env: 
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
