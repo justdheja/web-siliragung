@@ -21,7 +21,7 @@ const Footer = () => {
 						<a className="text-lg ">About</a>
 					</Link>
 				</div>
-				<div className=" flex flex-col lg:flex-row lg:space-x-8 items-center">
+				<div className="mt-4 lg:mt-0 flex flex-col lg:flex-row lg:space-x-8 lg:items-center">
 					<div className="text-sm lg:text-lg max-w-sm text-justify">
 						<h2 className="text-2xl dm-serif font-bold hidden lg:block">siliragung</h2>
 						Siliragung adalah sebuah kecamatan di Kabupaten Banyuwangi, Provinsi
@@ -45,7 +45,7 @@ const Footer = () => {
 				<hr className="border-b-2 border-black" />
 				<div className="flex flex-col lg:flex-row justify-between mt-2">
 					<div className=" flex w-60">
-						<Image src={logo} />
+						<Image src={logo} alt="logo kkn" />
 					</div>
 					<p className="text-gray-500">
 						&copy; 2021 KKN PPM UGM Siliragung Banyuwangi
