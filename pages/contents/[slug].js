@@ -187,6 +187,7 @@ const ContentDetail = ({ content }) => {
 						<div className="">
 							{documentToReactComponents(content.fields.body, options)}
 						</div>
+						<hr className="border-b-2 border-gray-200 w-6/12 m-auto my-8" />
 					</div>
 				)}
 				{content.fields.poster &&

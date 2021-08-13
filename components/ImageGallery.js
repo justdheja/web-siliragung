@@ -17,7 +17,7 @@ const ImageGallery = () => {
 		<div className="shadow-2xl rounded w-full p-4 lg:p-8 bg-white relative overflow-hidden ">
 			<div className="text-3xl dm-serif text-center mb-8">Gallery</div>
 			<Swiper
-				spaceBetween={50}
+				spaceBetween={10}
 				slidesPerView={2}
 				navigation
 				pagination={{ clickable: true }}
