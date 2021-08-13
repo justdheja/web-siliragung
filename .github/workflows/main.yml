@@ -1,16 +1,22 @@
-name: Lighthouse CI
-on: push
+name: Run Lighthouse CI
+on: [push]
 jobs:
-  lighthouse:
+  lhci:
+    name: Lighthouse CI
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v8
+      - uses: actions/checkout@v1
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
         with:
-          urls: |
-            https://where-is-my-mind.vercel.app/
-            https://where-is-my-mind.vercel.app/contents
-            https://where-is-my-mind.vercel.app/about
-          uploadArtifacts: true # save results as an action artifacts
-          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+          node-version: 10.x
+      - name: install and build
+        run: |
+          yarn
+          yarn build
+      - name: Run Lighthouse
+        run: |
+          yarn global add @lhci/cli@0.8.x
+          lhci autorun --upload.target=temporary-public-storage || echo "Lighthouse CI Failed"
+        env: 
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
