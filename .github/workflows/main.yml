@@ -1,22 +1,31 @@
 name: Run Lighthouse CI
-on: [pull_request]
+on:
+  push:
+    branches:
+      - master
+
 jobs:
   lhci:
     name: Lighthouse CI
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      
       - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
           node-version: "14"
+
       - name: Waiting Vercel Preview
         uses: patrickedqvist/wait-for-vercel-preview@v1.1.1
         id: siliragung
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 100
-      - run: echo ${{ steps.siliragung.outputs.url }}
+      
+      - name: Preview URL
+        run: echo ${{ steps.siliragung.outputs.url }}
+
       - name: Run Lighthouse
         run: |
           yarn global add @lhci/cli@0.8.x
