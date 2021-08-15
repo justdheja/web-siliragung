@@ -13,7 +13,7 @@ body {
 }
 
 .bg-home {
-	background-image: url('../public/bg-home.jpg');
+	background-image: url('../public/bg-home.webp');
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;

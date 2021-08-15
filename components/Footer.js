@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '../public/logo-logo.png';
+import logo from '../public/logo-logo.webp';
 
 const Footer = () => {
 	return (

@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import SwiperCore, { Virtual } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import gallery1 from '../public/1.jpg';
-import gallery2 from '../public/2.jpg';
-import gallery3 from '../public/3.jpg';
-import gallery4 from '../public/4.jpg';
+import gallery1 from '../public/1.webp';
+import gallery2 from '../public/2.webp';
+import gallery3 from '../public/3.webp';
+import gallery4 from '../public/4.webp';
 
 // Import Swiper styles
 import 'swiper/swiper.min.css';
@@ -14,7 +14,7 @@ SwiperCore.use([Virtual]);
 
 const ImageGallery = () => {
 	return (
-		<div className="shadow-2xl rounded w-full p-4 lg:p-8 bg-white relative overflow-hidden ">
+		<div className=" shadow-2xl rounded w-full p-4 lg:p-8 bg-white relative overflow-hidden ">
 			<div className="text-3xl dm-serif text-center mb-8">Gallery</div>
 			<Swiper
 				spaceBetween={10}
@@ -40,6 +40,7 @@ const ImageGallery = () => {
 				</SwiperSlide>
 			</Swiper>
 
+			<p className="text-sm mt-4 text-center">swipe untuk melihat</p>
 			<p className="text-sm mt-4">sumber: Luqman Adi Putra</p>
 		</div>
 	);
