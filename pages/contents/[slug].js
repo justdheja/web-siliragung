@@ -162,20 +162,21 @@ const ContentDetail = ({ content }) => {
 						frameBorder="0"
 					/>
 				) : null}
-				{content.fields.linkEmbedGoogleDrive && (
-					<div className="text-center mt-10">
-						<a
-							href={`https://drive.google.com/u/2/uc?id=${getIdGoogleDrive(
-								content.fields.linkEmbedGoogleDrive
-							)}&export=download`}
-							className="py-2 px-4 m-8 bg-primary text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md rounded-lg hover:shadow-lg"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							Download
-						</a>
-					</div>
-				)}
+				{content.fields.linkEmbedGoogleDrive &&
+					content.fields.linkEmbedGoogleDrive.includes('drive') && (
+						<div className="text-center mt-10">
+							<a
+								href={`https://drive.google.com/u/2/uc?id=${getIdGoogleDrive(
+									content.fields.linkEmbedGoogleDrive
+								)}&export=download`}
+								className="py-2 px-4 m-8 bg-primary text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md rounded-lg hover:shadow-lg"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Download
+							</a>
+						</div>
+					)}
 				{content.fields.body && (
 					<div className="lg:w-8/12 m-auto">
 						<img
@@ -199,9 +200,7 @@ const ContentDetail = ({ content }) => {
 								height={poster.fields.file.details.image.height}
 								className="m-auto"
 							/>
-							<p className="text-justify my-2 ">
-								{content.fields.description}
-							</p>
+							<p className="text-justify my-2 ">{content.fields.description}</p>
 						</div>
 					))}
 			</div>
