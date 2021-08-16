@@ -27,21 +27,41 @@ const ImageGallery = () => {
 				loop={true}
 			>
 				<SwiperSlide>
-					<Image src={gallery1} alt="gallery-image" className=" w-20 cursor-grab" />
+					<Image
+						src={gallery1}
+						alt="gallery-image"
+						className=" w-20 cursor-grab"
+					/>
 				</SwiperSlide>
 				<SwiperSlide>
-					<Image src={gallery2} alt="gallery-image" className=" w-20 cursor-grab" />
+					<Image
+						src={gallery2}
+						alt="gallery-image"
+						className=" w-20 cursor-grab"
+					/>
 				</SwiperSlide>
 				<SwiperSlide>
-					<Image src={gallery3} alt="gallery-image" className=" w-20 cursor-grab" />
+					<Image
+						src={gallery3}
+						alt="gallery-image"
+						className=" w-20 cursor-grab"
+					/>
 				</SwiperSlide>
 				<SwiperSlide>
-					<Image src={gallery4} alt="gallery-image" className=" w-20 cursor-grab" />
+					<Image
+						src={gallery4}
+						alt="gallery-image"
+						className=" w-20 cursor-grab"
+					/>
 				</SwiperSlide>
 			</Swiper>
 
-			<p className="text-sm mt-4 text-center">swipe untuk melihat</p>
-			<p className="text-sm mt-4">sumber: Luqman Adi Putra</p>
+			<p className="text-sm mt-4 text-center">
+				swipe untuk melihat
+				<span className="block mt-2">
+					sumber:Luqman Adi Putra 
+				</span>
+			</p>
 		</div>
 	);
 };
