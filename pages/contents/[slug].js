@@ -4,6 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { INLINES } from '@contentful/rich-text-types';
 import { Fade } from 'react-reveal';
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID,
@@ -80,6 +81,16 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const ContentDetail = ({ content }) => {
+	const [heightScreen, setHeightScreen] = useState(0)
+
+	useEffect(() => {
+		setHeightScreen(window.innerHeight - 150)
+		window.addEventListener("resize", () => setHeightScreen(window.innerHeight - 150))
+		return () => {
+			window.addEventListener("resize", () => {})
+		}
+	}, [heightScreen])
+
 	if (!content) {
 		return <p className="text-center">Loading...</p>;
 	}
@@ -158,7 +169,7 @@ const ContentDetail = ({ content }) => {
 								: content.fields.linkEmbedGoogleDrive
 						}
 						className="mx-auto w-full xl:w-9/12"
-						height={content.fields.linkEmbedVideo ? 550 : 650}
+						height={content.fields.linkEmbedVideo ? 550 : heightScreen}
 						frameBorder="0"
 					/>
 				) : null}
@@ -194,13 +205,13 @@ const ContentDetail = ({ content }) => {
 					content.fields.poster.map((poster, index) => (
 						<div key={index} className="lg:w-8/12 m-auto">
 							<img
-								alt="blog photo"
+								alt="poster"
 								src={'https:' + poster.fields.file.url}
 								width={poster.fields.file.details.image.width}
 								height={poster.fields.file.details.image.height}
-								className="m-auto"
+								className="m-auto w-full"
 							/>
-							<p className="text-justify my-2 ">{content.fields.description}</p>
+							<p className="text-justify my-4 ">{content.fields.description}</p>
 						</div>
 					))}
 			</div>
