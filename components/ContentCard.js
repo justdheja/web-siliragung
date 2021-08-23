@@ -1,8 +1,10 @@
 import Link from 'next/link';
+import Image from 'next/image'
 
 /* eslint-disable @next/next/no-img-element */
 const ContentCard = ({ content }) => {
   const { title, thumbnail, slug } = content.fields;
+	console.log(title, thumbnail)
 
 	return (
 		<div className="overflow-hidden shadow-xl mt-4 h-90 w-60 md:w-72 cursor-pointer m-auto inline-block">
@@ -14,7 +16,7 @@ const ContentCard = ({ content }) => {
 							src={'https:' + content.fields.poster[0].fields.file.url}
 							className="max-h-48 w-full object-cover object-top"
 						/>
-					) : thumbnail ? (
+					) : thumbnail.fields?.file?.url ? (
 						<img
 							alt="blog photo"
 							src={'https:' + thumbnail.fields.file.url}
@@ -22,8 +24,8 @@ const ContentCard = ({ content }) => {
 						/>
 					) : (
 						<img
-							alt="blog photo"
-							src="https://images.ctfassets.net/6pcl1zkgu2pg/1U76Mr8dQjeFcknycKwmEC/e20c3d644b34482c543ae4eb0db2ca7c/photo-1499750310107-5fef28a66643"
+							alt="default photo"
+							src="https://images.unsplash.com/photo-1500989145603-8e7ef71d639e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1055&q=80"
 							className="max-h-48 w-full object-cover object-top"
 						/>
 					)}
