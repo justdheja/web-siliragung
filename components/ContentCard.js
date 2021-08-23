@@ -16,7 +16,7 @@ const ContentCard = ({ content }) => {
 							src={'https:' + content.fields.poster[0].fields.file.url}
 							className="max-h-48 w-full object-cover object-top"
 						/>
-					) : thumbnail.fields?.file?.url ? (
+					) : thumbnail?.fields?.file?.url ? (
 						<img
 							alt="blog photo"
 							src={'https:' + thumbnail.fields.file.url}
